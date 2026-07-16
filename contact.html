@@ -66,13 +66,22 @@
     <div class="reveal">
       <span class="eyebrow">Send a Message</span>
       <h2 style="margin:16px 0 24px;">Start the conversation.</h2>
-      <form id="contact-form">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+
+<p hidden>
+  <label>
+    Don't fill this out:
+    <input name="bot-field">
+  </label>
+</p>
         <div class="form-grid">
           <div class="form-field">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" required>
           </div>
           <div class="form-field">
+
             <label for="email">Email Address</label>
             <input type="email" id="email" name="email" placeholder="you@example.com" required>
           </div>
@@ -94,7 +103,7 @@
           <textarea id="message" name="message" rows="6" placeholder="Tell me more about the opportunity or your inquiry..." required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Send Message <i class="fa-solid fa-paper-plane"></i></button>
-        <p class="form-note" id="form-success" style="display:none;color:var(--forest);font-weight:700;">Thank you — your message has been received. I'll get back to you shortly. (Note: this is a static preview form; please also reach me directly via email below.)</p>
+
       </form>
     </div>
 
